@@ -193,7 +193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74741abdd6c9b354393184f9224038d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  bullet: {fileID: 1463941028096268, guid: 66c2aeef52161c243af965f4da795e21, type: 2}
+  gun: {fileID: 1096786658995030}
+  shoot: 0
 --- !u!136 &136807352009524434
 CapsuleCollider:
   m_ObjectHideFlags: 1

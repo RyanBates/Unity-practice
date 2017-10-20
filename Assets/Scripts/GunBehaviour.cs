@@ -2,22 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunBehaviour : Camera_Movement
+public class GunBehaviour : MonoBehaviour
 {
 
     public GameObject bullet;
 
+    public GameObject gun;
 
     int mag = 7;
 
-    bool shoot = false;
+    [HideInInspector]
+    public Vector3 bPos, gPos;
+
+    [HideInInspector]
+   public bool shoot = false;
 
 	// Use this for initialization
 	void Start ()
     {
+        bullet.transform.position = gun.transform.position;
 
-
-	}
+        bPos = bullet.transform.position;
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -32,10 +38,13 @@ public class GunBehaviour : Camera_Movement
 
                 Instantiate(bullet);
 
-                //bullet.transform * ;
-
                 mag -= 1;
+
+                bPos.z += (bullet.transform.position.z / bullet.transform.position.z) + GetComponent<BulletBehaviour>().bulletSpeed;
+
+
             }
+            
             
         }
 
